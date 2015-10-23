@@ -10,7 +10,7 @@ from itertools import product
 import numpy as np
 import numpy.random as rn
 
-import value_iteration
+from . import value_iteration
 
 def irl(feature_matrix, n_actions, discount, transition_probability,
         trajectories, epochs, learning_rate):
