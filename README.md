@@ -20,3 +20,4 @@ Additionally, the following MDP domains are implemented:
 - SciPy
 - CVXOPT
 - Theano
+- MatPlotLib (for examples)
