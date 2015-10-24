@@ -54,4 +54,4 @@ def main(grid_size, discount, n_objects, n_colours, n_trajectories, epochs,
     plt.show()
 
 if __name__ == '__main__':
-    main(10, 0.9, 15, 2, 20, 20, 0.01)
+    main(10, 0.9, 15, 2, 20, 200, 0.01)

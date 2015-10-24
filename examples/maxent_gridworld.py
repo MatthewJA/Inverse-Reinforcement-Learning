@@ -15,12 +15,13 @@ def main(grid_size, discount, n_trajectories, epochs, learning_rate):
     """
     Run maximum entropy inverse reinforcement learning on the gridworld MDP.
 
+    Plots the reward function.
+
     grid_size: Grid size. int.
     discount: MDP discount factor. float.
     n_trajectories: Number of sampled trajectories. int.
     epochs: Gradient descent iterations. int.
     learning_rate: Gradient descent learning rate. float.
-    -> Reward function.
     """
 
     wind = 0.3
@@ -46,4 +47,4 @@ def main(grid_size, discount, n_trajectories, epochs, learning_rate):
     plt.show()
 
 if __name__ == '__main__':
-    main(5, 20, 200, 0.01)
+    main(5, 0.01, 20, 200, 0.01)

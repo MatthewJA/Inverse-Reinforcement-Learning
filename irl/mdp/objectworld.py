@@ -11,7 +11,7 @@ from itertools import product
 import numpy as np
 import numpy.random as rn
 
-from gridworld import Gridworld
+from .gridworld import Gridworld
 
 class OWObject(object):
     """

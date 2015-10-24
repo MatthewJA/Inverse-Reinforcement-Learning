@@ -79,6 +79,8 @@ Implements the objectworld MDP described in Levine et al. 2011.
 **Classes, instance attributes, methods:**
 
 - `OWObject(inner_colour, outer_colour)`: Object in objectworld.
+    - `inner_colour`: Inner colour of object. int.
+    - `outer_colour`: Outer colour of object. int.
 
 - `Objectworld(grid_size, n_objects, n_colours, wind, discount)`: Objectworld MDP.
     - `actions`: Tuple of (dx, dy) actions.
