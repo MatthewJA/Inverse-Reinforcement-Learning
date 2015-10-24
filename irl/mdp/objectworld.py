@@ -113,6 +113,13 @@ class Objectworld(Gridworld):
                     else:
                         nearest_outer[obj.outer_colour] = dist
 
+        # Need to ensure that all colours are represented.
+        for c in range(self.n_colours):
+            if c not in nearest_inner:
+                nearest_inner[c] = 0
+            if c not in nearest_outer:
+                nearest_outer[c] = 0
+
         if discrete:
             state = np.zeros((2*self.n_colours*self.grid_size,))
             i = 0
