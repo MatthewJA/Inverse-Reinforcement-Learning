@@ -35,6 +35,14 @@ Implements maximum entropy inverse reinforcement learning (Ziebart et al., 2008)
 - `find_expected_svf(n_states, r, n_actions, discount, transition_probability, trajectories)`: Find the expected state visitation frequencies using algorithm 1 from Ziebart et al. 2008.
 - `expected_value_difference(n_states, n_actions, transition_probability, reward, discount, p_start_state, optimal_value, true_reward)`: Calculate the expected value difference, which is a proxy to how good a recovered reward function is.
 
+### deep_maxent
+
+**Functions:**
+
+- `irl(structure, feature_matrix, n_actions, discount, transition_probability, trajectories, epochs, learning_rate, initialisation="normal", l1=0.1, l2=0.1)`: Find the reward function for the given trajectories.
+- `find_svf(n_states, trajectories)`: Find the state vistiation frequency from trajectories.
+- `find_expected_svf(n_states, r, n_actions, discount, transition_probability, trajectories)`: Find the expected state visitation frequencies using algorithm 1 from Ziebart et al. 2008.
+
 ### value_iteration
 
 Find the value function associated with a policy. Based on Sutton & Barto, 1998.
