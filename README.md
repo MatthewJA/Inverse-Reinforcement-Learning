@@ -23,6 +23,15 @@ Additionally, the following MDP domains are implemented:
 
 Following is a brief list of functions and classes exported by modules. Full documentation is included in the docstrings of each function or class; only functions and classes intended for use outside the module are documented here.
 
+### linear_irl
+
+Implements linear programming inverse reinforcement learning (Ng & Russell, 2000).
+
+**Functions:**
+
+- `irl(n_states, n_actions, transition_probability, policy, discount, Rmax, l1)`: Find a reward function with inverse RL.
+- `large_inverseRL(value, transition_probability, feature_matrix, n_states, n_actions, policy)`: Find the reward in a large state space.
+
 ### maxent
     
 Implements maximum entropy inverse reinforcement learning (Ziebart et al., 2008).
