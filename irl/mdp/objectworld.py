@@ -199,3 +199,10 @@ class Objectworld(Gridworld):
         return super().generate_trajectories(n_trajectories, trajectory_length,
                                              policy,
                                              True)
+
+    def optimal_policy(self, state_int):
+        raise NotImplementedError(
+            "Optimal policy is not implemented for Objectworld.")
+    def optimal_policy_deterministic(self, state_int):
+        raise NotImplementedError(
+            "Optimal policy is not implemented for Objectworld.")
