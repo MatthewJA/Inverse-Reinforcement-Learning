@@ -11,11 +11,12 @@ import matplotlib.pyplot as plt
 import irl.maxent as maxent
 import irl.mdp.gridworld as gridworld
 
-def main(grid_size, n_trajectories, epochs, learning_rate):
+def main(grid_size, discount, n_trajectories, epochs, learning_rate):
     """
     Run maximum entropy inverse reinforcement learning on the gridworld MDP.
 
     grid_size: Grid size. int.
+    discount: MDP discount factor. float.
     n_trajectories: Number of sampled trajectories. int.
     epochs: Gradient descent iterations. int.
     learning_rate: Gradient descent learning rate. float.
@@ -23,7 +24,6 @@ def main(grid_size, n_trajectories, epochs, learning_rate):
     """
 
     wind = 0.3
-    discount = 0.01
     trajectory_length = 3*grid_size
 
     gw = gridworld.Gridworld(grid_size, wind, discount)

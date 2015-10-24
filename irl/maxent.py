@@ -56,7 +56,7 @@ def irl(feature_matrix, n_actions, discount, transition_probability,
 
 def find_svf(n_states, trajectories):
     """
-    Find the state vistiation frequency from trajectories.
+    Find the state visitation frequency from trajectories.
 
     n_states: Number of states. int.
     trajectories: 3D array of state/action pairs. States are ints, actions
