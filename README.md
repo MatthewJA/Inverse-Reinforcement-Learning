@@ -37,8 +37,39 @@ Implements maximum entropy inverse reinforcement learning (Ziebart et al., 2008)
 
 ### value_iteration
 
+Find the value function associated with a policy. Based on Sutton & Barto, 1998.
+
+**Functions:**
+
+- `value(policy, n_states, transition_probabilities, reward, discount, threshold=1e-2)`: Find the value function associated with a policy.
+- `optimal_value(n_states, n_actions, transition_probabilities, reward, discount, threshold=1e-2)`: Find the optimal value function.
+- `find_policy(n_states, n_actions, transition_probabilities, reward, discount, threshold=1e-2, v=None, stochastic=True)`: Find the optimal policy.
+
 ### mdp
 
 #### gridworld
+
+Implements the gridworld MDP.
+
+**Classes, instance attributes, methods:**
+
+- `Gridworld(grid_size, wind, discount)`: Gridworld MDP.
+    - `actions`: Tuple of (dx, dy) actions.
+    - `n_actions`: Number of actions. int.
+    - `n_states`: Number of states. int.
+    - `grid_size`: Size of grid. int.
+    - `wind`: Chance of moving randomly. float.
+    - `discount`: MDP discount factor. float.
+    - `transition_probability`: NumPy array with shape (n_states, n_actions, n_states) where `transition_probability[si, a, sk]` is the probability of transitioning from state si to state sk under action a.
+    - `feature_vector(i, feature_map="ident")`: Get the feature vector associated with a state integer.
+    - `feature_matrix(feature_map="ident")`: Get the feature matrix for this gridworld.
+    - `int_to_point(i)`: Convert a state int into the corresponding coordinate.
+    - `point_to_int(p)`: Convert a coordinate into the corresponding state int.
+    - `neighbouring(i, k)`: Get whether two points neighbour each other. Also returns true if they are the same point.
+    - `reward(state_int)`: Reward for being in state state_int.
+    - `average_reward(n_trajectories, trajectory_length, policy)`: Calculate the average total reward obtained by following a given policy over n_paths paths.
+    - `optimal_policy(state_int)`: The optimal policy for this gridworld.
+    - `optimal_policy_deterministic(state_int)`: Deterministic version of the optimal policy for this gridworld.
+    - `generate_trajectories(n_trajectories, trajectory_length, policy, random_start=False)`: Generate n_trajectories trajectories with length trajectory_length, following the given policy.
 
 #### objectworld
