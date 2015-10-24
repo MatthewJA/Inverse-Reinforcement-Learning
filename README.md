@@ -37,6 +37,8 @@ Implements maximum entropy inverse reinforcement learning (Ziebart et al., 2008)
 
 ### deep_maxent
 
+Implements deep maximum entropy inverse reinforcement learning based on Ziebart et al., 2008 and Wulfmeier et al., 2015, using symbolic methods with Theano.
+
 **Functions:**
 
 - `irl(structure, feature_matrix, n_actions, discount, transition_probability, trajectories, epochs, learning_rate, initialisation="normal", l1=0.1, l2=0.1)`: Find the reward function for the given trajectories.

@@ -14,7 +14,7 @@ import numpy.random as rn
 import theano as th
 import theano.tensor as T
 
-import .maxent
+from . import maxent
 
 FLOAT = th.config.floatX
 
