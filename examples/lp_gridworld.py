@@ -29,7 +29,7 @@ def main(grid_size, discount):
     ground_r = np.array([gw.reward(s) for s in range(gw.n_states)])
     policy = [gw.optimal_policy_deterministic(s) for s in range(gw.n_states)]
     r = linear_irl.irl(gw.n_states, gw.n_actions, gw.transition_probability,
-            policy, gw.discount, 1, 50)
+            policy, gw.discount, 1, 5)
 
     plt.subplot(1, 2, 1)
     plt.pcolor(ground_r.reshape((grid_size, grid_size)))
@@ -42,4 +42,4 @@ def main(grid_size, discount):
     plt.show()
 
 if __name__ == '__main__':
-    main(5, 0.01)
+    main(5, 0.2)
