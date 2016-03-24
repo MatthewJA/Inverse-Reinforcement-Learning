@@ -35,6 +35,10 @@ class Gridworld(object):
               for j in range(self.n_actions)]
              for i in range(self.n_states)])
 
+    def __str__(self):
+        return "Gridworld({}, {}, {})".format(self.grid_size, self.wind,
+                                              self.discount)
+
     def feature_vector(self, i, feature_map="ident"):
         """
         Get the feature vector associated with a state integer.
@@ -127,7 +131,7 @@ class Gridworld(object):
         xk, yk = self.int_to_point(k)
 
         if not self.neighbouring((xi, yi), (xk, yk)):
-            return False
+            return 0.0
 
         # Is k the intended state to move to?
         if (xi + xj, yi + yj) == (xk, yk):
@@ -139,7 +143,8 @@ class Gridworld(object):
 
         # If these are the same point, we can only move here by either moving
         # off the grid or being blown off the grid. Are we on a corner or not?
-        if (xi, yi) in {(0, 0), (self.grid_size-1, self.grid_size-1)}:
+        if (xi, yi) in {(0, 0), (self.grid_size-1, self.grid_size-1),
+                        (0, self.grid_size-1), (self.grid_size-1, 0)}:
             # Corner.
             # Can move off the edge in two directions.
             # Did we intend to move off the grid?
@@ -153,7 +158,13 @@ class Gridworld(object):
                 # We can blow off the grid in either direction only by wind.
                 return 2*self.wind/self.n_actions
         else:
-            # Not a corner.
+            # Not a corner. Is it an edge?
+            if (xi not in {0, self.grid_size-1} and
+                yi not in {0, self.grid_size-1}):
+                # Not an edge.
+                return 0.0
+
+            # Edge.
             # Can only move off the edge in one direction.
             # Did we intend to move off the grid?
             if not (0 <= xi + xj < self.grid_size and
