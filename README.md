@@ -1,6 +1,6 @@
 # Inverse Reinforcement Learning
 
-Implements selected inverse reinforcement learning (IRL) algorithms as part of COMP3710.
+Implements selected inverse reinforcement learning (IRL) algorithms as part of COMP3710. My final report is available [here](http://matthewja.com/pdfs/irl.pdf) and describes the implemented algorithms.
 
 ## Algorithms implemented
 
