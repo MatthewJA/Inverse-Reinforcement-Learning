@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.555999.svg)](https://doi.org/10.5281/zenodo.555999)
 
-Implements selected inverse reinforcement learning (IRL) algorithms as part of COMP3710. My final report is available [here](http://matthewja.com/pdfs/irl.pdf) and describes the implemented algorithms.
+Implements selected inverse reinforcement learning (IRL) algorithms as part of COMP3710, supervised by Dr Mayank Daswani and Dr Marcus Hutter. My final report is available [here](http://matthewja.com/pdfs/irl.pdf) and describes the implemented algorithms.
 
 If you use this code in your work, you can cite it as follows:
 ```bibtex
